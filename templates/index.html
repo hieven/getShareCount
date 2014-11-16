@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home page</title>
+  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <h1>Share Count Get!</h1>
+    <p>input your website url and then you can get the share counts.</p>
+  </div>
+
+  <div class="container">
+    <form role="form" action="{{ url_for('getUrl') }}" method="POST">
+      <div class="form-group">
+        <label for="url">Website URL</label>
+        <input required type="text" class="form-control" id="url" name="url" placeholder="e.g: facebook, twitter, reddit...etc">
+      </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <h3>Facebook: <span>{{ facebookCount }}</span></h3>
+    <h3>Twitter: <span>{{ twitterCount }}</span></h3>
+    <h3>Reddit: <span>{{ redditCount }}</span></h3>
+  </div>
+
+
+
+
+
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+</body>
+</html>
